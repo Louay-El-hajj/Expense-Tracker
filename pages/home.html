@@ -7,7 +7,44 @@
 </head>
 <body>
     <div class="container" id="container">
-        
+    <div class="container">
+    <h1>Expense Tracker</h1>
+    <div id="balance">Total Balance: $0.00 USD</div>
+    <div class="form-container">
+    <label for="type">Type:</label>
+    <select id="type">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+    </select>
+
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" placeholder="Enter amount">
+    <label for="currency">Currency:</label>
+    <select id="currency"></select>
+    <button onclick="addTransaction()">Add Transaction</button>
+
+    </div>
+    <div class="filter-container">
+        <label for="filterType">Filter Type:</label>
+        <select id="filterType">
+            <option value="all">All</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <label for="filterCurrency">Filter Currency:</label>
+        <select id="filterCurrency">
+        <option value="all"></option>  
+        </select>
+
+        <label for="amountFrom">Amount From:</label>
+        <input type="text" id="amountFrom" placeholder="From">
+        <label for="amountTo">Amount To:</label>
+        <input type="text" id="amountTo" placeholder="To">
+        <button onclick="filterTransactions()">Filter</button>
+    </div>
+
+    <ul id="transactionList"></ul>
 
     </div>
 </body>
