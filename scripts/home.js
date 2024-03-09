@@ -74,4 +74,48 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please enter a valid amount.');
             return;
         }
-}})
+}
+try {
+    const transaction = { type, amount, currency, usdAmount, timestamp: new Date().toISOString() };
+    transactions.push(transaction);
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+
+    displayTransactions(transactions);
+    displayBalance(transactions);
+
+    document.getElementById('amount').value = '';
+} catch (error) {
+    console.error('Transaction processing failed:', error);
+    alert('Transaction processing failed. Please try again.');
+}
+         //funtion to remove  a transactio
+window.removeTransaction = function (index) {
+    if (confirm('Are you sure you want to remove this transaction?')) {
+        transactions.splice(index, 1);
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+        displayTransactions(transactions);
+        displayBalance(transactions);
+    }
+};
+
+// Function to edit a transaction
+window.editTransaction = function (index) {
+    const transaction = transactions[index];
+    if (transaction) {
+        document.getElementById('type').value = transaction.type;
+        document.getElementById('amount').value = transaction.amount;
+        document.getElementById('currency').value = transaction.currency;
+        transactions.splice(index, 1);
+
+        //apply changes to  the local storage
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+
+        // Display the updated transactions and balance
+        displayTransactions(transactions);
+        displayBalance(transactions);
+    }
+};
+
+
+
+})
