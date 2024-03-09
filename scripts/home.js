@@ -44,30 +44,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to make a POST request for currency conversion
     async function convertCurrency(from, to, amount) {
         try {
-            
             const parsedAmount = parseFloat(amount);
-
     
-            const requestData = {
-                from: from,
-                to: to,
-                amount: parsedAmount,
-            };
-
+            const formData = new URLSearchParams();
+            formData.append('from', from);
+            formData.append('to', to);
+            formData.append('amount', parsedAmount);
+    
             const response = await fetch('https://ivory-ostrich-yoke.cyclic.app/students/convert', {
                 method: 'POST',
-                body: JSON.stringify(requestData),
-                headers: { 'Content-Type': 'application/json' },
+                body: formData,
             });
-
+    
             const exchangeRateData = await response.json();
-
+    
             console.log('Exchange Rate Data:', exchangeRateData);
-
+    
             const exchangeRate = exchangeRateData.rate !== undefined ? exchangeRateData.rate : exchangeRateData;
-
+    
             console.log('Exchange Rate:', exchangeRate);
-
+    
             return exchangeRate;
         } catch (error) {
             console.error('Currency conversion failed:', error);
@@ -176,15 +172,15 @@ function displayTransactions(transactions) {
         const filterCurrency = document.getElementById('filterCurrency').value;
         const amountFrom = parseFloat(document.getElementById('amountFrom').value) || 0;
         const amountTo = parseFloat(document.getElementById('amountTo').value) || Infinity;
-
+    
         const filteredTransactions = transactions.filter(transaction => {
             const typeCondition = filterType === 'all' || transaction.type === filterType;
             const currencyCondition = filterCurrency === 'all' || transaction.currency === filterCurrency;
             const amountCondition = transaction.usdAmount >= amountFrom && transaction.usdAmount <= amountTo;
-
+    
             return typeCondition && currencyCondition && amountCondition;
         });
-
+    
         displayTransactions(filteredTransactions);
         displayBalance(filteredTransactions);
     };
