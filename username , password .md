@@ -1,3 +1,6 @@
+use username : nabiha 
+    password : nabiha
+
 Create an expense tracker website with the following requirements:
 User can view, create, delete and update transactions.
 Transactions can be incomes or expenses with certain amounts and currencies.
