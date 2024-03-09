@@ -59,4 +59,19 @@ document.addEventListener('DOMContentLoaded', function () {
             throw new Error('Currency conversion failed');
         }
     }
-})
+    //  import transactions from local storage
+    let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    displayTransactions(transactions);
+
+
+    displayBalance(transactions);
+    window.addTransaction = async function () {
+        const type = document.getElementById('type').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+        const currency = document.getElementById('currency').value;
+
+        if (!amount || isNaN(amount)) {
+            alert('Please enter a valid amount.');
+            return;
+        }
+}})
