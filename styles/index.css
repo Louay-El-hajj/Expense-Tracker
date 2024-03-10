@@ -1,62 +1,67 @@
+/* styles.css */
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
-body {
 
-    font-family: Arial, sans-serif;
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    background-image: url('../assets/5.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to right, #FF7E5F, #ee95d3, rgb(164, 190, 228));
 }
 
 .login-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
- margin-top: 100px;
- 
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
 }
-h2{
-    color: #fff;
+
+h2 {
+    color: #242323;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 }
+
 label {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #ce7ce7;
+    margin-top: 15px;
+    color: #555;
 }
 
 input {
-    padding: 8px;
-    margin: 5px;
+    padding: 10px;
+    margin: 5px 0;
     width: 100%;
-    border-radius: 40px;
-   
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
-    padding: 10px;
-    margin-top: 10px;
+    padding: 12px;
+    margin-top: 20px;
     background-color: #242323;
-    color: #ce7ce7;
-    font-weight: bolder;
+    color: #fff;
+    font-weight: bold;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    border-radius: 40px;
+    transition: background 0.3s ease-in-out;
 }
-button:hover{
+
+button:hover {
     background: #ce7ce7;
     color: #242323;
 }
@@ -64,10 +69,5 @@ button:hover{
 @media (max-width: 600px) {
     .login-container {
         width: 90%;
-        margin: 10px;
-    }
-    
-    button {
-        margin-top: 10px;
     }
 }

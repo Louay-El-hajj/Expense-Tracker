@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     /* background-image: url('../assets/4.jpg'); */
-    background-color: rgb(164, 190, 228);
+    background: linear-gradient(to right, #FF7E5F, #ee95d3, rgb(164, 190, 228));
     background-repeat: no-repeat;
     background-size: cover;
 }
