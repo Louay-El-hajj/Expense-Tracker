@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('to', to);
             formData.append('amount', parsedAmount);
     
-            const response = await fetch('https://ivory-ostrich-yoke.cyclic.app/students/convert', {
+            const response = await fetch('https://crowded-cyan-wildebeest.cyclic.app/students/convert', {
                 method: 'POST',
                 body: formData,
             });
