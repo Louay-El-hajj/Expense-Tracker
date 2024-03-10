@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     async function fetchCurrencies() {
         try {
-            const response = await fetch('https://crowded-cyan-wildebeest.cyclic.app/students/available');
+            const response = await fetch('https://rich-erin-angler-hem.cyclic.app/students/available');
             const data = await response.json();
 
             console.log('Received data:', data);
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('to', to);
             formData.append('amount', parsedAmount);
     
-            const response = await fetch('https://crowded-cyan-wildebeest.cyclic.app/students/convert', {
+            const response = await fetch('https://rich-erin-angler-hem.cyclic.app/students/convert', {
                 method: 'POST',
                 body: formData,
             });
