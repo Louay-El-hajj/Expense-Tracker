@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     async function fetchCurrencies() {
         try {
-            const response = await fetch('https://ivory-ostrich-yoke.cyclic.app/students/available');
+            const response = await fetch('https://crowded-cyan-wildebeest.cyclic.app/students/available');
             const data = await response.json();
 
             console.log('Received data:', data);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Fetch currencies and populate dropdowns
+   
     async function initializeCurrencies() {
         const currencies = await fetchCurrencies();
 
