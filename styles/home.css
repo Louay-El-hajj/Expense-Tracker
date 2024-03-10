@@ -6,7 +6,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('../assets/4.jpg');
+    /* background-image: url('../assets/4.jpg'); */
+    background-color: rgb(164, 190, 228);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -65,6 +66,7 @@ button {
     color: #fff;
     cursor: pointer;
     border: none;
+    max-width: 150px;
     border-radius: 50px;
 }
 
